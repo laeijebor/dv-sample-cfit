@@ -3,7 +3,7 @@ import time
 import requests
 import os
 import pandas as pd
-from dv_utils import default_settings, Client, audit_log 
+from dv_utils import default_settings, Client, audit_log
 
 logger = logging.getLogger(__name__)
 
@@ -13,78 +13,42 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-TOP_ARTISTS_QUERY = """
-SELECT DISTINCT ?name 
-WHERE {
-    ?action <https://schema.org/additionalType> <https://schema.org/FollowAction> .
-    ?action <https://schema.org/object> ?artist .
-    ?artist <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/MusicGroup>; <https://schema.org/name> ?name .
-}"""
-
 # define an event processing function
 def event_processor(evt: dict):
     """
     Process an incoming event
     Exception raised by this function are handled by the default event listener and reported in the logs.
     """
-    
+    start = time.time()
     logger.info(f"Processing event {evt}")
+    SECRET_API_HOST = os.environ.get("SECRET_API_HOST", "")
+    SECRET_ACCESS_TOKEN = os.environ.get("SECRET_ACCESS_TOKEN", "")
+    HMRC_HOST= os.environ.get("HMRC_HOST", "")
 
-    # dispatch events according to their type
-    evt_type =evt.get("type", "")
-    if(evt_type == "ARTISTS"):
-        # use the ARTISTS event processor dedicated function
-        logger.info(f"use the update artists event processor")
-        update_artists_event_processor(evt)
-    else:
-        # use the GENERIC event processor function, that basicaly does nothing
-        logger.info(f"Unhandled message type, use the generic event processor")
-        generic_event_processor(evt)
+    if(not SECRET_API_HOST):
+        raise RuntimeError("SECRET_API environment variable is not defined")
+    if(not SECRET_ACCESS_TOKEN):
+        raise RuntimeError("SECRET_ACCESS_TOKEN environment variable is not defined")
+    if(not HMRC_HOST):
+        raise RuntimeError("HMRC_HOST environment variable is not defined")
 
-
-def generic_event_processor(evt: dict):
-    pass
-
-
-def update_artists_event_processor(evt: dict):
-     try:
+    try:
         logger.info(f"Processing event {evt}")
 
-        client = Client()
-
-        # push an audit log to reccord for a long duration (6months) that a artists event has been received and processed
-        audit_log("received a artists event", evt=evt_type)
-
-        # Use userIds provided in the event, or get all active users for this application
-        user_ids = evt.get("userIds") if "userIds" in evt else client.get_users()
-
-        logger.info(f"Processing {len(user_ids)} users")
-
-        top_artists = []
-
-        for user_id in user_ids:
-            try:
-                 # retrieve data graph for user
-                user_data = client.get_data(user_id)
-
-                # get top artists from user data
-                top_artists_names = user_data.query(TOP_ARTISTS_QUERY)
-                 for artist_name_row in top_artists_names :
-                     top_artists.append( artist_name_row.get(0) )
-
-            # pylint: disable=broad-except
-            except Exception as err:
-                logger.warning(f"Failed to process user {user_id} : {err}")
-                try:
-        # store the output file in /resources/outputs directory, to make it available for download later through the collaboration space APIs
-        df = pd.DataFrame(array) 
-        df.to_csv("/resources/outputs/artists.csv", index=False)
-        except:
-            pass
-        
+        secret = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc', headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
+        logger.info(f'gor secret {secret.json().get("secret")}')
+        response = requests.get(f'https://{HMRC_HOST}/organisations/vat/181607759/obligations?from=2021-01-25&to=2022-01-25', headers={
+            'Authorization': f'Bearer {secret.json().get("secret")}',
+            'Gov-Test-Scenario':'MONTHLY_THREE_MET',
+             'Accept':'application/vnd.hmrc.1.0+json'
+        })
+        logger.error(f'got response {response.json()}')
     except Exception as err:
         logger.error(f"Failed processing event: {err}")
-        traceback.print_exc()
     finally:
         logger.info(f"Processed event in {time.time() - start:.{3}f}s")
+
+
+
+
 
