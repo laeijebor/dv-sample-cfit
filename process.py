@@ -13,42 +13,49 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
+
 # define an event processing function
 def event_processor(evt: dict):
-    """
-    Process an incoming event
-    Exception raised by this function are handled by the default event listener and reported in the logs.
-    """
     start = time.time()
     logger.info(f"Processing event {evt}")
     SECRET_API_HOST = os.environ.get("SECRET_API_HOST", "")
     SECRET_ACCESS_TOKEN = os.environ.get("SECRET_ACCESS_TOKEN", "")
-    HMRC_HOST= os.environ.get("HMRC_HOST", "")
+    HMRC_HOST = os.environ.get("HMRC_HOST", "")
+    DIRECT_ID_HOST = os.environ.get("DIRECT_ID_HOST", "")
 
-    if(not SECRET_API_HOST):
+    if not SECRET_API_HOST:
         raise RuntimeError("SECRET_API environment variable is not defined")
-    if(not SECRET_ACCESS_TOKEN):
+    if not SECRET_ACCESS_TOKEN:
         raise RuntimeError("SECRET_ACCESS_TOKEN environment variable is not defined")
-    if(not HMRC_HOST):
+    if not HMRC_HOST:
+        raise RuntimeError("HMRC_HOST environment variable is not defined")
+    if not DIRECT_ID_HOST:
         raise RuntimeError("HMRC_HOST environment variable is not defined")
 
     try:
-        logger.info(f"Processing event {evt}")
+        secretHMRC = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc',
+                                  headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
+        secretDirectId = requests.get(f'https://{SECRET_API_HOST}/secret/directId',
+                                      headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
+        response = requests.get(
+            f'https://{HMRC_HOST}/organisations/vat/181607759/obligations?from=2021-01-25&to=2022-01-25', headers={
+                'Authorization': f'Bearer {secretHMRC.json().get("secret")}',
+                'Gov-Test-Scenario': 'MONTHLY_THREE_MET',
+                'Accept': 'application/vnd.hmrc.1.0+json'
+            })
+        logger.info(f'got response {response.json()}')
+        df = pd.DataFrame(response)
+        df.to_json("/resources/outputs/obligations.json", index=False)
 
-        secret = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc', headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
-        logger.info(f'gor secret {secret.json().get("secret")}')
-        response = requests.get(f'https://{HMRC_HOST}/organisations/vat/181607759/obligations?from=2021-01-25&to=2022-01-25', headers={
-            'Authorization': f'Bearer {secret.json().get("secret")}',
-            'Gov-Test-Scenario':'MONTHLY_THREE_MET',
-             'Accept':'application/vnd.hmrc.1.0+json'
-        })
-        logger.error(f'got response {response.json()}')
+        response = requests.get(
+            f'https://{DIRECT_ID_HOST}/data/v2/consents/2915f5fa-8e87-4a56-65e5-08dbf06add33/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
+            headers={
+                'Authorization': f'Bearer {secretDirectId.json().get("secret")}',
+            })
+        df = pd.DataFrame(response)
+        df.to_json("/resources/outputs/transactions.json", index=False)
+        logger.info(f'got response {response.json()}')
     except Exception as err:
         logger.error(f"Failed processing event: {err}")
     finally:
         logger.info(f"Processed event in {time.time() - start:.{3}f}s")
-
-
-
-
-

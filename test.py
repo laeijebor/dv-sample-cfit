@@ -19,8 +19,7 @@ class Test(unittest.TestCase):
         Try the process on a single user configured in the test .env file, without going through the redis queue
         """
         test_event = {
-            'trigger': 'full',
-            # 'jobId': None,
+            'type': 'TEST_EVENT',
         }
 
         process.event_processor(test_event)
