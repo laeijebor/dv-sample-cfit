@@ -44,7 +44,7 @@ def event_processor(evt: dict):
                 'Accept': 'application/vnd.hmrc.1.0+json'
             })
         logger.info(f'got response {response.json()}')
-        with open("obligations.json", "w") as f:
+        with open("/resources/outputs/obligations.json", "w") as f:
             f.write(json.dumps(response.json()))
 
         response = requests.get(
@@ -52,7 +52,7 @@ def event_processor(evt: dict):
             headers={
                 'Authorization': f'Bearer {secretDirectId.json().get("secret")}',
             })
-        with open("transactions.json", "w") as f:
+        with open("/resources/outputs/transactions.json", "w") as f:
             f.write(json.dumps(response.json()))
         logger.info(f'got response {response.json()}')
     except Exception as err:
