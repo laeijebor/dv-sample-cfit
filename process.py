@@ -2,7 +2,7 @@ import logging
 import time
 import requests
 import os
-import pandas as pd
+import json
 from dv_utils import default_settings, Client, audit_log
 
 logger = logging.getLogger(__name__)
@@ -44,16 +44,16 @@ def event_processor(evt: dict):
                 'Accept': 'application/vnd.hmrc.1.0+json'
             })
         logger.info(f'got response {response.json()}')
-        df = pd.DataFrame(response)
-        df.to_json("/resources/outputs/obligations.json", index=False)
+        with open("obligations.json", "w") as f:
+            f.write(json.dumps(response.json()))
 
         response = requests.get(
-            f'https://{DIRECT_ID_HOST}/data/v2/consents/2915f5fa-8e87-4a56-65e5-08dbf06add33/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
+            f'https://{DIRECT_ID_HOST}/data/v2/consents/d5aaf6fa-373a-44e0-f8d4-08dbf8c0132e/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
             headers={
                 'Authorization': f'Bearer {secretDirectId.json().get("secret")}',
             })
-        df = pd.DataFrame(response)
-        df.to_json("/resources/outputs/transactions.json", index=False)
+        with open("transactions.json", "w") as f:
+            f.write(json.dumps(response.json()))
         logger.info(f'got response {response.json()}')
     except Exception as err:
         logger.error(f"Failed processing event: {err}")
