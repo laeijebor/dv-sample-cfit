@@ -23,9 +23,6 @@ class Test(unittest.TestCase):
         test_event = {
             'type': 'CFIT_',
         }
-#         test_event = {
-#             'type': 'TEST_EVENT',
-#         }
 
         process.event_processor(test_event, outdir)
 

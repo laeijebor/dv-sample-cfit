@@ -19,6 +19,7 @@ logging.basicConfig(
 def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     start = time.time()
     evt_type = evt.get("type", "")
+        logger.info(f"Received event {evt}")
     if (evt_type.startswith("SEED_DATA_CFIT")):
         seed_data()
     if (evt_type.startswith("CFIT_")):
@@ -43,7 +44,6 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
             secretDirectId = requests.get(f'https://{SECRET_API_HOST}/secret/directId',
                                           headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
             secretHMRC = credentialsHMRC.json().get("secret")
-#             secretHMRC = '8024b20bffa60c6b90a05c0253a5eb8d'
             response = requests.get(
                 f'https://{HMRC_HOST}/organisations/vat/859460976/obligations?from=2021-01-25&to=2022-01-25', headers={
                     'Authorization': f'Bearer {secretHMRC}',

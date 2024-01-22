@@ -28,4 +28,6 @@ def seed_data():
     source_directory = 'test_outputs'
     user_id = 99
     destination_directory = f'/resources/outputs/{user_id}'
+    print("Seeding data" + source_directory + " to " + destination_directory)
     copy_directory_contents(source_directory, destination_directory)
+    print("Finished seeding data")
