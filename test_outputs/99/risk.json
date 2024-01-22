@@ -1,0 +1,42 @@
+{
+    "risk": {
+        "indebtedness": {
+            "leasing": {
+                "periodTotalTransactionsAmount": -360,
+                "periodTotalTransactionsCount": 1,
+                "monthlyAverageTransactionsAmount": -9.79,
+                "monthlyAverageTransactionsCount": 0
+            },
+            "loanInstalment": {
+                "periodTotalTransactionsAmount": -15438.29,
+                "periodTotalTransactionsCount": 23,
+                "monthlyAverageTransactionsAmount": -419.9,
+                "monthlyAverageTransactionsCount": 1
+            },
+            "total": {
+                "periodTotalTransactionsAmount": -15798.29,
+                "periodTotalTransactionsCount": 24,
+                "monthlyAverageTransactionsAmount": -429.69,
+                "monthlyAverageTransactionsCount": 1
+            },
+            "incomeRatio": 0.02
+        },
+        "cash": {
+            "withdrawal": {
+                "periodTotalTransactionsAmount": -3601.52,
+                "periodTotalTransactionsCount": 4,
+                "monthlyAverageTransactionsAmount": -97.96,
+                "monthlyAverageTransactionsCount": 0,
+                "regularity": 0.09,
+                "expensesRatio": 0,
+                "incomeRatio": 0
+            }
+        },
+        "consumerRelated": {
+            "periodTotalTransactionsAmount": -2415.77,
+            "periodTotalTransactionsCount": 79,
+            "monthlyAverageTransactionsAmount": -65.71,
+            "monthlyAverageTransactionsCount": 2
+        }
+    }
+}
