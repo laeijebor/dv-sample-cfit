@@ -20,7 +20,6 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     start = time.time()
     evt_type = evt.get("type", "")
     logger.info(f"Received event {evt}")
-    if (evt_type.startswith("SEED_DATA_CFIT")):
     if (evt_type.startswith("CFIT_")):
         if(evt_type == "CFIT_SEED_DATA"):
             logger.info(f"About to seed data {evt}")
