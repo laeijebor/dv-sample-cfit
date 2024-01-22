@@ -56,6 +56,8 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
                 })
             logger.info(f'got response {response.json()}')
             with open(f"{outdir}/obligations.json", "w") as f:
+                f.write(json.dumps(response.json()))
+                
             response = requests.get(
                 f'https://{DIRECT_ID_HOST}/data/v2/consents/d5aaf6fa-373a-44e0-f8d4-08dbf8c0132e/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
                 headers={
