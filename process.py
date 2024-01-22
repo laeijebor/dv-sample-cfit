@@ -4,6 +4,7 @@ import requests
 import os
 import json
 from dv_utils import default_settings, Client, audit_log
+from cfit_utils.load_data import seed_data
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +19,8 @@ logging.basicConfig(
 def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     start = time.time()
     evt_type = evt.get("type", "")
+    if (evt_type.startswith("SEED_DATA_CFIT")):
+        seed_data()
     if (evt_type.startswith("CFIT_")):
         logger.info(f"Processing event {evt}")
         SECRET_API_HOST = os.environ.get("SECRET_API_HOST", "")
