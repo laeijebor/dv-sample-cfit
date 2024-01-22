@@ -7,7 +7,7 @@ from typing import Any
 
 def send_message(*args, **kwargs) -> None:
     # Call the original print function to log locally
-    original_print(*args, **kwargs)
+    print(*args, **kwargs)
 
     # Convert the print arguments to a string
     message = ' '.join(map(str, args))
