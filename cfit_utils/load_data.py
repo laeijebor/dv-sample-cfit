@@ -37,7 +37,6 @@ def seed_data(outputs_folder = '/resources/outputs'):
     send_message("Seeding data" + source_directory + " to " + destination_directory)
     print("Seeding data" + source_directory + " to " + destination_directory)
     copy_directory_contents(source_directory, destination_directory)
-    print("Finished seeding data")
     local_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
     write_sample_file()
     send_message("Finished seeding data at time " + local_time)

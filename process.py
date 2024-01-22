@@ -23,7 +23,7 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     if (evt_type.startswith("CFIT_")):
         if(evt_type == "CFIT_SEED_DATA"):
             logger.info(f"About to seed data {evt}")
-            seed_data()
+            seed_data(outdir)
             logger.info(f"Processed event SEED_DATA_CFIT in {time.time() - start:.{3}f}s")
             return
 
@@ -42,6 +42,7 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
         if not DIRECT_ID_HOST:
             raise RuntimeError("HMRC_HOST environment variable is not defined")
 
+        logger.info("About to get secrets")
         try:
             credentialsHMRC = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc',
                                       headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
@@ -57,7 +58,7 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
             logger.info(f'got response {response.json()}')
             with open(f"{outdir}/obligations.json", "w") as f:
                 f.write(json.dumps(response.json()))
-                
+
             response = requests.get(
                 f'https://{DIRECT_ID_HOST}/data/v2/consents/d5aaf6fa-373a-44e0-f8d4-08dbf8c0132e/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
                 headers={

@@ -9,7 +9,7 @@ import unittest
 import process
 import logging
 
-outdir = os.environ.get("OUTPUT_DIR", "/resources/outputs")
+outdir = os.environ.get("OUTPUT_DIR", "resources/outputs")
 
 DEBUG = os.environ.get('DEBUG', '').lower() == 'true'
 logging.basicConfig(filename='events.log', level=logging.DEBUG if DEBUG else logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -24,6 +24,15 @@ class Test(unittest.TestCase):
             'type': 'CFIT_',
         }
 
+        process.event_processor(test_event, outdir)
+
+    def test_seed_data(self):
+        """
+        Try the seeding process without going through the redis queue
+        """
+        test_event = {
+            'type': 'CFIT_SEED_DATA',
+        }
         process.event_processor(test_event, outdir)
 
 
