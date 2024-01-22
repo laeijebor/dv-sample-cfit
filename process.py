@@ -19,7 +19,7 @@ logging.basicConfig(
 def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     start = time.time()
     evt_type = evt.get("type", "")
-        logger.info(f"Received event {evt}")
+    logger.info(f"Received event {evt}")
     if (evt_type.startswith("SEED_DATA_CFIT")):
         seed_data()
     if (evt_type.startswith("CFIT_")):
