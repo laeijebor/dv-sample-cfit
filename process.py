@@ -4,6 +4,7 @@ import requests
 import os
 import json
 from dv_utils import default_settings, Client, audit_log
+from cfit_utils.load_data import seed_data
 
 logger = logging.getLogger(__name__)
 
@@ -15,9 +16,11 @@ logging.basicConfig(
 
 
 # define an event processing function
-def event_processor(evt: dict):
+def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     start = time.time()
     evt_type = evt.get("type", "")
+    if (evt_type.startswith("SEED_DATA_CFIT")):
+        seed_data()
     if (evt_type.startswith("CFIT_")):
         logger.info(f"Processing event {evt}")
         SECRET_API_HOST = os.environ.get("SECRET_API_HOST", "")
@@ -35,20 +38,20 @@ def event_processor(evt: dict):
             raise RuntimeError("HMRC_HOST environment variable is not defined")
 
         try:
-            secretHMRC = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc',
+            credentialsHMRC = requests.get(f'https://{SECRET_API_HOST}/secret/hmrc',
                                       headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
             secretDirectId = requests.get(f'https://{SECRET_API_HOST}/secret/directId',
                                           headers={'Authorization': f'Bearer {SECRET_ACCESS_TOKEN}'})
+            secretHMRC = credentialsHMRC.json().get("secret")
+#             secretHMRC = '8024b20bffa60c6b90a05c0253a5eb8d'
             response = requests.get(
-                f'https://{HMRC_HOST}/organisations/vat/181607759/obligations?from=2021-01-25&to=2022-01-25', headers={
-                    'Authorization': f'Bearer {secretHMRC.json().get("secret")}',
+                f'https://{HMRC_HOST}/organisations/vat/859460976/obligations?from=2021-01-25&to=2022-01-25', headers={
+                    'Authorization': f'Bearer {secretHMRC}',
                     'Gov-Test-Scenario': 'MONTHLY_THREE_MET',
                     'Accept': 'application/vnd.hmrc.1.0+json'
                 })
             logger.info(f'got response {response.json()}')
-            with open("/resources/outputs/obligations.json", "w") as f:
-                f.write(json.dumps(response.json()))
-
+            with open(f"{outdir}/obligations.json", "w") as f:
             response = requests.get(
                 f'https://{DIRECT_ID_HOST}/data/v2/consents/d5aaf6fa-373a-44e0-f8d4-08dbf8c0132e/accounts/c7cc5181-d427-453d-88de-3d3a824ee96f/transactions',
                 headers={
@@ -61,3 +64,8 @@ def event_processor(evt: dict):
             logger.error(f"Failed processing event: {err}")
         finally:
             logger.info(f"Processed event in {time.time() - start:.{3}f}s")
+
+
+
+if __name__ == "__main__":
+    print("DEFAULT SETTINGS", vars(default_settings))

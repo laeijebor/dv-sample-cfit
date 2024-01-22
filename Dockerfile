@@ -14,6 +14,8 @@ RUN  python -m pip install --upgrade pip && \
      pip install -r requirements.txt && \
      rm -rdf /home/user/.cache/pip
 
+COPY test_outputs/ ./test_outputs/
+COPY cfit_utils/ ./cfit_utils/
 COPY *.py ./
 
 ENTRYPOINT ["python3", "index.py"]

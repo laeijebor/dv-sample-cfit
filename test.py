@@ -9,6 +9,8 @@ import unittest
 import process
 import logging
 
+outdir = os.environ.get("OUTPUT_DIR", "/resources/outputs")
+
 DEBUG = os.environ.get('DEBUG', '').lower() == 'true'
 logging.basicConfig(filename='events.log', level=logging.DEBUG if DEBUG else logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -19,7 +21,17 @@ class Test(unittest.TestCase):
         Try the process on a single user configured in the test .env file, without going through the redis queue
         """
         test_event = {
-            'type': 'TEST_EVENT',
+            'type': 'CFIT_',
         }
+#         test_event = {
+#             'type': 'TEST_EVENT',
+#         }
 
-        process.event_processor(test_event)
+        process.event_processor(test_event, outdir)
+
+
+print("Running tests")
+
+if __name__ == "__main__":
+    unittest.main()
+

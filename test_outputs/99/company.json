@@ -1,0 +1,226 @@
+{
+    "name": "XXX LTD",
+    "number": "88888888",
+    "email": null,
+    "emails": [],
+    "country": "GB",
+    "address": {
+        "formatted": "Example, Example, Example W1U 7GY",
+        "region": "Example",
+        "addressLine1": "Example",
+        "addressLine2": "Example",
+        "locality": "London",
+        "postalCode": "W1U 7GY",
+        "careOf": null,
+        "premises": null,
+        "poBox": null,
+        "country": "England",
+        "countryCode": null,
+        "type": "Registered"
+    },
+    "addresses": [],
+    "websites": [],
+    "phoneNumbers": [],
+    "jurisdiction": "england-wales",
+    "type": "ltd",
+    "businessCategories": [
+        {
+            "code": "85100",
+            "description": "Pre-primary education",
+            "type": "SIC",
+            "primary": null
+        },
+        {
+            "code": "88910",
+            "description": "Child day-care activities",
+            "type": "SIC",
+            "primary": null
+        }
+    ],
+    "alternativeNames": [],
+    "accounts": {
+        "lastAccountsType": "total-exemption-full",
+        "nextAccountsOverdue": false,
+        "nextAccountsReferenceDate": "2023-11-30T00:00:00"
+    },
+    "status": "active",
+    "persons": [],
+    "associatedCompanies": [],
+    "filings": [
+        {
+            "type": "CS01",
+            "date": "2023-11-20",
+            "description": "confirmation-statement-with-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2023-08-31",
+            "description": "accounts-with-accounts-type-total-exemption-full",
+            "category": "accounts"
+        },
+        {
+            "type": "AD01",
+            "date": "2023-02-21",
+            "description": "change-registered-office-address-company-with-date-old-address-new-address",
+            "category": "address"
+        },
+        {
+            "type": "MR01",
+            "date": "2022-12-30",
+            "description": "mortgage-create-with-deed-with-charge-number-charge-creation-date",
+            "category": "mortgage"
+        },
+        {
+            "type": "CH01",
+            "date": "2022-12-16",
+            "description": "change-person-director-company-with-change-date",
+            "category": "officers"
+        },
+        {
+            "type": "PSC04",
+            "date": "2022-12-16",
+            "description": "change-to-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "CS01",
+            "date": "2022-12-04",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AAMD",
+            "date": "2022-11-03",
+            "description": "accounts-amended-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "AAMD",
+            "date": "2022-11-02",
+            "description": "accounts-amended-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "AA",
+            "date": "2022-08-31",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2021-11-24",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2021-08-29",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2020-11-20",
+            "description": "confirmation-statement-with-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AP01",
+            "date": "2020-11-20",
+            "description": "appoint-person-director-company-with-name-date",
+            "category": "officers"
+        },
+        {
+            "type": "PSC07",
+            "date": "2020-11-20",
+            "description": "cessation-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC07",
+            "date": "2020-09-20",
+            "description": "cessation-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC04",
+            "date": "2020-09-20",
+            "description": "change-to-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "TM01",
+            "date": "2020-09-20",
+            "description": "termination-director-company-with-name-termination-date",
+            "category": "officers"
+        },
+        {
+            "type": "AA",
+            "date": "2020-05-21",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "PSC01",
+            "date": "2019-11-29",
+            "description": "notification-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC01",
+            "date": "2019-11-29",
+            "description": "notification-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC01",
+            "date": "2019-11-27",
+            "description": "notification-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC09",
+            "date": "2019-11-27",
+            "description": "withdrawal-of-a-person-with-significant-control-statement",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "CS01",
+            "date": "2019-11-27",
+            "description": "confirmation-statement-with-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2019-08-28",
+            "description": "accounts-with-accounts-type-dormant",
+            "category": "accounts"
+        }
+    ],
+    "charges": [
+        {
+            "createdOn": "2022-12-22T00:00:00",
+            "deliveredOn": "2022-12-30T00:00:00",
+            "resolvedOn": null,
+            "personsEntitled": [
+                "National Westminster Bank PLC"
+            ],
+            "status": "outstanding",
+            "transactions": [
+                {
+                    "filingType": "create-charge-with-deed",
+                    "deliveredOn": "2022-12-30T00:00:00"
+                }
+            ]
+        }
+    ],
+    "dateOfCessation": null,
+    "dateOfCreation": "2016-11-07T00:00:00",
+    "flags": {
+        "hasCharges": true,
+        "hasInsolvencyHistory": false,
+        "isCommunityInterestCompany": false
+    },
+    "profile": null
+}
