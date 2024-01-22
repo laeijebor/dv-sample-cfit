@@ -21,7 +21,9 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     evt_type = evt.get("type", "")
     logger.info(f"Received event {evt}")
     if (evt_type.startswith("SEED_DATA_CFIT")):
+        logger.info(f"About to seed data {evt}")
         seed_data()
+        logger.info(f"Processed event SEED_DATA_CFIT in {time.time() - start:.{3}f}s")
     if (evt_type.startswith("CFIT_")):
         logger.info(f"Processing event {evt}")
         SECRET_API_HOST = os.environ.get("SECRET_API_HOST", "")

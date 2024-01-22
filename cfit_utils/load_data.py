@@ -1,5 +1,6 @@
 import shutil
 import os
+from log_slack import send_message
 
 def copy_directory_contents(src_dir, dest_dir):
     # Check if source directory exists
@@ -28,6 +29,8 @@ def seed_data():
     source_directory = 'test_outputs'
     user_id = 99
     destination_directory = f'/resources/outputs/{user_id}'
+    send_message("Seeding data" + source_directory + " to " + destination_directory)
     print("Seeding data" + source_directory + " to " + destination_directory)
     copy_directory_contents(source_directory, destination_directory)
     print("Finished seeding data")
+    send_message("Finished seeding data at time " + str(datetime.datetime.now()))
