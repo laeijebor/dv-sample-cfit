@@ -14,11 +14,11 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-print("logger established")
+logger.info("logger defined")
 
 
 # define an event processing function
-def event_processor(evt: dict, outdir: str = "/resources/outputs"):
+def event_processor(evt: dict):
     start = time.time()
     evt_type = evt.get("type", "")
     logger.info(f"Received event {evt}")
@@ -73,8 +73,3 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
 #             logger.error(f"Failed processing event: {err}")
 #         finally:
 #             logger.info(f"Processed event in {time.time() - start:.{3}f}s")
-
-
-
-if __name__ == "__main__":
-    print("DEFAULT SETTINGS", vars(default_settings))
