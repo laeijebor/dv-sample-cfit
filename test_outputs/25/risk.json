@@ -1,0 +1,54 @@
+{
+    "risk": {
+        "indebtedness": {
+            "leasing": {
+                "periodTotalTransactionsAmount": -183372.36,
+                "periodTotalTransactionsCount": 250,
+                "monthlyAverageTransactionsAmount": -4991.99,
+                "monthlyAverageTransactionsCount": 7
+            },
+            "loanInstalment": {
+                "periodTotalTransactionsAmount": -148791.25,
+                "periodTotalTransactionsCount": 121,
+                "monthlyAverageTransactionsAmount": -4050.58,
+                "monthlyAverageTransactionsCount": 3
+            },
+            "mortgageInstalment": {
+                "periodTotalTransactionsAmount": -1718.74,
+                "periodTotalTransactionsCount": 3,
+                "monthlyAverageTransactionsAmount": -46.79,
+                "monthlyAverageTransactionsCount": 0
+            },
+            "total": {
+                "periodTotalTransactionsAmount": -333882.35,
+                "periodTotalTransactionsCount": 374,
+                "monthlyAverageTransactionsAmount": -9089.36,
+                "monthlyAverageTransactionsCount": 10
+            },
+            "incomeRatio": 0.02
+        },
+        "cash": {
+            "withdrawal": {
+                "periodTotalTransactionsAmount": -6263.18,
+                "periodTotalTransactionsCount": 18,
+                "monthlyAverageTransactionsAmount": -170.5,
+                "monthlyAverageTransactionsCount": 0,
+                "regularity": 0.26,
+                "expensesRatio": 0,
+                "incomeRatio": 0
+            }
+        },
+        "penalties": {
+            "periodTotalTransactionsAmount": -233.83,
+            "periodTotalTransactionsCount": 2,
+            "monthlyAverageTransactionsAmount": -6.37,
+            "monthlyAverageTransactionsCount": 0
+        },
+        "consumerRelated": {
+            "periodTotalTransactionsAmount": -13661.9,
+            "periodTotalTransactionsCount": 158,
+            "monthlyAverageTransactionsAmount": -371.92,
+            "monthlyAverageTransactionsCount": 4
+        }
+    }
+}

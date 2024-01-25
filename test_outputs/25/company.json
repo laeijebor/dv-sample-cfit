@@ -1,0 +1,204 @@
+{
+    "name": "XXX LTD",
+    "number": "88888888",
+    "email": null,
+    "emails": [],
+    "country": "GB",
+    "address": {
+        "formatted": "Example, Example, Example W1U 7GY",
+        "region": "Example",
+        "addressLine1": "Example",
+        "addressLine2": "Example",
+        "locality": "London",
+        "postalCode": "W1U 7GY",
+        "careOf": null,
+        "premises": null,
+        "poBox": null,
+        "country": "England",
+        "countryCode": null,
+        "type": "Registered"
+    },
+    "addresses": [],
+    "websites": [],
+    "phoneNumbers": [],
+    "jurisdiction": "england-wales",
+    "type": "ltd",
+    "businessCategories": [
+        {
+            "code": "43220",
+            "description": "Plumbing, heat and air-conditioning installation",
+            "type": "SIC",
+            "primary": null
+        }
+    ],
+    "alternativeNames": [],
+    "accounts": {
+        "lastAccountsType": "total-exemption-full",
+        "nextAccountsOverdue": false,
+        "nextAccountsReferenceDate": "2023-05-31T00:00:00"
+    },
+    "status": "active",
+    "persons": [],
+    "associatedCompanies": [],
+    "filings": [
+        {
+            "type": "AA",
+            "date": "2023-06-20",
+            "description": "accounts-with-accounts-type-total-exemption-full",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2023-05-30",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "CH01",
+            "date": "2023-05-09",
+            "description": "change-person-director-company-with-change-date",
+            "category": "officers"
+        },
+        {
+            "type": "AD01",
+            "date": "2023-05-09",
+            "description": "change-registered-office-address-company-with-date-old-address-new-address",
+            "category": "address"
+        },
+        {
+            "type": "AAMD",
+            "date": "2022-10-13",
+            "description": "accounts-amended-with-made-up-date",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2022-07-13",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2022-03-02",
+            "description": "accounts-with-accounts-type-unaudited-abridged",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2021-06-23",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AP01",
+            "date": "2021-03-03",
+            "description": "appoint-person-director-company-with-name-date",
+            "category": "officers"
+        },
+        {
+            "type": "PSC01",
+            "date": "2021-03-03",
+            "description": "notification-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "PSC07",
+            "date": "2021-03-03",
+            "description": "cessation-of-a-person-with-significant-control",
+            "category": "persons-with-significant-control"
+        },
+        {
+            "type": "TM01",
+            "date": "2021-03-03",
+            "description": "termination-director-company-with-name-termination-date",
+            "category": "officers"
+        },
+        {
+            "type": "TM01",
+            "date": "2021-03-03",
+            "description": "termination-director-company-with-name-termination-date",
+            "category": "officers"
+        },
+        {
+            "type": "TM02",
+            "date": "2021-03-03",
+            "description": "termination-secretary-company-with-name-termination-date",
+            "category": "officers"
+        },
+        {
+            "type": "AA",
+            "date": "2021-01-16",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "AP03",
+            "date": "2020-10-20",
+            "description": "appoint-person-secretary-company-with-name-date",
+            "category": "officers"
+        },
+        {
+            "type": "CH01",
+            "date": "2020-10-20",
+            "description": "change-person-director-company-with-change-date",
+            "category": "officers"
+        },
+        {
+            "type": "CH01",
+            "date": "2020-10-20",
+            "description": "change-person-director-company-with-change-date",
+            "category": "officers"
+        },
+        {
+            "type": "CH01",
+            "date": "2020-10-20",
+            "description": "change-person-director-company-with-change-date",
+            "category": "officers"
+        },
+        {
+            "type": "CS01",
+            "date": "2020-05-30",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AD01",
+            "date": "2020-05-06",
+            "description": "change-registered-office-address-company-with-date-old-address-new-address",
+            "category": "address"
+        },
+        {
+            "type": "AA",
+            "date": "2020-03-24",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "AA",
+            "date": "2019-06-04",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2019-05-30",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "DISS40",
+            "date": "2019-05-14",
+            "description": "gazette-filings-brought-up-to-date",
+            "category": "gazette"
+        }
+    ],
+    "charges": [],
+    "dateOfCessation": null,
+    "dateOfCreation": "2017-05-17T00:00:00",
+    "flags": {
+        "hasCharges": false,
+        "hasInsolvencyHistory": false,
+        "isCommunityInterestCompany": false
+    },
+    "profile": null
+}

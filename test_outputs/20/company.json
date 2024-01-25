@@ -1,0 +1,126 @@
+{
+    "name": "XXX LTD",
+    "number": "88888888",
+    "email": null,
+    "emails": [],
+    "country": "GB",
+    "address": {
+        "formatted": "Example, Example, Example W1U 7GY",
+        "region": "Example",
+        "addressLine1": "Example",
+        "addressLine2": "Example",
+        "locality": "London",
+        "postalCode": "W1U 7GY",
+        "careOf": null,
+        "premises": null,
+        "poBox": null,
+        "country": "England",
+        "countryCode": null,
+        "type": "Registered"
+    },
+    "addresses": [],
+    "websites": [],
+    "phoneNumbers": [],
+    "jurisdiction": "england-wales",
+    "type": "ltd",
+    "businessCategories": [
+        {
+            "code": "42990",
+            "description": "Construction of other civil engineering projects not elsewhere classified",
+            "type": "SIC",
+            "primary": null
+        }
+    ],
+    "alternativeNames": [],
+    "accounts": {
+        "lastAccountsType": "micro-entity",
+        "nextAccountsOverdue": false,
+        "nextAccountsReferenceDate": "2024-06-30T00:00:00"
+    },
+    "status": "active",
+    "persons": [],
+    "associatedCompanies": [],
+    "filings": [
+        {
+            "type": "AA",
+            "date": "2023-11-24",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2023-06-22",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2023-01-26",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "AD01",
+            "date": "2022-08-22",
+            "description": "change-registered-office-address-company-with-date-old-address-new-address",
+            "category": "address"
+        },
+        {
+            "type": "CS01",
+            "date": "2022-07-15",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2022-01-24",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2021-06-21",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2021-01-14",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2020-07-02",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "AA",
+            "date": "2020-03-12",
+            "description": "accounts-with-accounts-type-micro-entity",
+            "category": "accounts"
+        },
+        {
+            "type": "CS01",
+            "date": "2019-07-03",
+            "description": "confirmation-statement-with-no-updates",
+            "category": "confirmation-statement"
+        },
+        {
+            "type": "NEWINC",
+            "date": "2018-06-20",
+            "description": "incorporation-company",
+            "category": "incorporation"
+        }
+    ],
+    "charges": [],
+    "dateOfCessation": null,
+    "dateOfCreation": "2018-06-20T00:00:00",
+    "flags": {
+        "hasCharges": false,
+        "hasInsolvencyHistory": false,
+        "isCommunityInterestCompany": false
+    },
+    "profile": null
+}

@@ -1,0 +1,145 @@
+{
+    "score": {
+        "companyId": "XXX",
+        "status": {
+            "status": "complete",
+            "description": null
+        },
+        "rating": {
+            "score": 0.0008731634699608263,
+            "algorithmType": "blended-credit-passport",
+            "algorithmVersion": "1",
+            "metadata": {
+                "description": "High",
+                "class": "a1",
+                "scale": "aa",
+                "label": "A+",
+                "impliedRating": "A1.edf",
+                "frequency": 88,
+                "createdAt": "2024-01-10T19:01:08.062+00:00"
+            }
+        },
+        "components": [
+            {
+                "type": "banking",
+                "ids": [],
+                "rating": {
+                    "score": 0.0008731634699608263,
+                    "algorithmType": "behavioural-credit-passport",
+                    "algorithmVersion": "gb_v1.0",
+                    "metadata": {
+                        "description": "High",
+                        "class": "a1",
+                        "scale": "aa",
+                        "label": "A+",
+                        "impliedRating": "A1.edf",
+                        "frequency": 88,
+                        "createdAt": "2024-01-10T19:01:07.974+00:00"
+                    }
+                },
+                "confidence": 0.0,
+                "algorithm": null,
+                "optional": true,
+                "status": {
+                    "status": "complete",
+                    "description": null
+                },
+                "additionalData": {}
+            },
+            {
+                "type": "accounting",
+                "ids": [
+                    "0485c30d-5746-40c9-a9c0-ce417ea56fe2",
+                    "76f06a30-e589-4e58-bb19-00b57b2f78d1"
+                ],
+                "rating": {
+                    "score": 0.004610347,
+                    "algorithmType": "accounting-risk-calc",
+                    "algorithmVersion": null,
+                    "metadata": {
+                        "description": "Sound",
+                        "class": "baa3",
+                        "scale": "b",
+                        "label": "B",
+                        "impliedRating": "Baa3.edf",
+                        "frequency": 41,
+                        "createdAt": "2024-01-10T19:01:04.231+00:00"
+                    }
+                },
+                "confidence": 0.0,
+                "algorithm": null,
+                "optional": true,
+                "status": {
+                    "status": "complete",
+                    "description": null
+                },
+                "additionalData": {
+                    "Score": 0.004610347,
+                    "CashAtBankAndInHand": {
+                        "Title": "CASH AT BANK AND IN HAND/ CREDITOR (<1YR)",
+                        "Type": "Ratio",
+                        "RelativeContribution": -11.615477,
+                        "Percentile": 64.17123,
+                        "Value": 22.531763
+                    },
+                    "EbitdaInterestPayable": {
+                        "Title": "EBITDA/ INTEREST PAYABLE",
+                        "Type": "Value",
+                        "RelativeContribution": -50.955143,
+                        "Percentile": null,
+                        "Value": null
+                    },
+                    "NetProfitLossTurnover": {
+                        "Title": "NET PROFIT(LOSS)/ TURNOVER",
+                        "Type": "Ratio",
+                        "RelativeContribution": null,
+                        "Percentile": null,
+                        "Value": null
+                    },
+                    "RealTotalAssets": {
+                        "Title": "REAL TOTAL ASSETS",
+                        "Type": "Value",
+                        "RelativeContribution": 13.299559,
+                        "Percentile": 18.670225,
+                        "Value": 557.3184
+                    },
+                    "ChangeInRoa": {
+                        "Title": "CHANGE IN ROA",
+                        "Type": "Ratio",
+                        "RelativeContribution": -13.797336,
+                        "Percentile": 53.04562,
+                        "Value": 0.0
+                    },
+                    "ChangeInArSales": {
+                        "Title": "CHANGE IN AR/ SALES",
+                        "Type": "Ratio",
+                        "RelativeContribution": null,
+                        "Percentile": null,
+                        "Value": null
+                    },
+                    "SalesGrowth": {
+                        "Title": "SALES GROWTH",
+                        "Type": "Ratio",
+                        "RelativeContribution": null,
+                        "Percentile": null,
+                        "Value": null
+                    },
+                    "LiabilitiesProvisionsTotalAssets": {
+                        "Title": "LIABILITIES AND PROVISIONS/ TOTAL ASSETS",
+                        "Type": "Ratio",
+                        "RelativeContribution": -10.332487,
+                        "Percentile": 51.646164,
+                        "Value": 63.515846
+                    },
+                    "TradeCreditorsTurnover": {
+                        "Title": "TRADE CREDITORS/ TURNOVER",
+                        "Type": "Ratio",
+                        "RelativeContribution": null,
+                        "Percentile": null,
+                        "Value": null
+                    }
+                }
+            }
+        ]
+    }
+}
