@@ -67,11 +67,8 @@ def add_global_scenario(scenario_id, outdir='/resources/outputs'):
 
     scenario_file = {}
     key = scenario_id
-    if not scenario_file:
-        scenario_file = {}
 
-    if key not in scenario_file:
-        scenario_file[key] = {}
+    scenario_file[key] = {}
 
     for filename in files:
         if filename == 'data.json':
@@ -83,6 +80,7 @@ def add_global_scenario(scenario_id, outdir='/resources/outputs'):
 
     with open(f'{outdir}/{scenario_id}.json', 'w') as f:
         f.write(json.dumps(scenario_file, indent=4))
+    print(f'Added global scenario {scenario_id} to {outdir}')
 
 
 def add_user_scenario(user_id, scenario_id, outdir='/resources/outputs'):

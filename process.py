@@ -25,7 +25,6 @@ def event_processor(evt: dict, outdir: str = "/resources/outputs"):
     if (evt_type.startswith("CFIT_")):
         if(evt_type == "CFIT_SEED_DATA"):
             logger.info(f"About to seed data {evt}")
-            user_id = evt.get("user_id", "99")
             seed_data(outdir)
             logger.info(f"Processed event SEED_DATA_CFIT in {time.time() - start:.{3}f}s")
             return
