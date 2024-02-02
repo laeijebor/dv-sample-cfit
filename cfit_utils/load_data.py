@@ -2,7 +2,6 @@ import shutil
 import os
 import time
 import json
-# from cfit_utils.log_slack import send_message
 
 def copy_directory_contents(src_dir, dest_dir, prefix=''):
     # Ensure the source directory exists
@@ -33,12 +32,7 @@ def write_sample_file():
         f.write('This is a sample file')
 
 
-def seed_data(outputs_folder = '/resources/outputs'):
-    print(f"Seeding data in {outputs_folder}")
-#     add_user_scenario(user_id, '99', outputs_folder)
-    add_global_scenario('99', outputs_folder)
-    add_global_scenario('20', outputs_folder)
-    add_global_scenario('25', outputs_folder)
+
 
 
 
@@ -82,6 +76,11 @@ def add_global_scenario(scenario_id, outdir='/resources/outputs'):
         f.write(json.dumps(scenario_file, indent=4))
     print(f'Added global scenario {scenario_id} to {outdir}')
 
+def seed_data(outputs_folder = '/resources/outputs'):
+    print(f"Seeding data in {outputs_folder}")
+    add_global_scenario('99', outputs_folder)
+    add_global_scenario('20', outputs_folder)
+    add_global_scenario('25', outputs_folder)
 
 def add_user_scenario(user_id, scenario_id, outdir='/resources/outputs'):
     print(f"Adding user scenario_id {user_id} {scenario_id}")
