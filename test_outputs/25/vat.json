@@ -1,0 +1,100 @@
+{
+    "vat": [
+        {
+            "year": 2023,
+            "month": 1,
+            "currency": "GBP",
+            "amount": 0,
+            "total_sales_ex_vat": 118808.86,
+            "total_expenses_ex_vat": -189317.95
+        },
+        {
+            "year": 2023,
+            "month": 2,
+            "currency": "GBP",
+            "amount": 44639.81,
+            "total_sales_ex_vat": 147054.70,
+            "total_expenses_ex_vat": -173338.03
+        },
+        {
+            "year": 2023,
+            "month": 3,
+            "currency": "GBP",
+            "amount": 29588.97,
+            "total_sales_ex_vat": 216413.56,
+            "total_expenses_ex_vat": -250873.61
+        },
+        {
+            "year": 2023,
+            "month": 4,
+            "currency": "GBP",
+            "amount": 48475.38,
+            "total_sales_ex_vat": 295239.18,
+            "total_expenses_ex_vat": -252675.19
+        },
+        {
+            "year": 2023,
+            "month": 5,
+            "currency": "GBP",
+            "amount": 42329.78,
+            "total_sales_ex_vat": 240044.77,
+            "total_expenses_ex_vat": -255309.36
+        },
+        {
+            "year": 2023,
+            "month": 6,
+            "currency": "GBP",
+            "amount": 40801.53,
+            "total_sales_ex_vat": 142008.43,
+            "total_expenses_ex_vat": -243141.11
+        },
+        {
+            "year": 2023,
+            "month": 7,
+            "currency": "GBP",
+            "amount": 54157.76,
+            "total_sales_ex_vat": 177307.94,
+            "total_expenses_ex_vat": -189810.51
+        },
+        {
+            "year": 2023,
+            "month": 8,
+            "currency": "GBP",
+            "amount": 48471.96,
+            "total_sales_ex_vat": 272449.93,
+            "total_expenses_ex_vat": -349634.90
+        },
+        {
+            "year": 2023,
+            "month": 9,
+            "currency": "GBP",
+            "amount": 42549.23,
+            "total_sales_ex_vat": 188888.23,
+            "total_expenses_ex_vat": -241887.04
+        },
+        {
+            "year": 2023,
+            "month": 10,
+            "currency": "GBP",
+            "amount": 60948.92,
+            "total_sales_ex_vat": 290255.69,
+            "total_expenses_ex_vat": -298292.73
+        },
+        {
+            "year": 2023,
+            "month": 11,
+            "currency": "GBP",
+            "amount": 62475.02,
+            "total_sales_ex_vat": 220543.72,
+            "total_expenses_ex_vat": -318566.71
+        },
+        {
+            "year": 2023,
+            "month": 12,
+            "currency": "GBP",
+            "amount": 58633.11,
+            "total_sales_ex_vat": 180366.62,
+            "total_expenses_ex_vat": -269827.36
+        }
+    ]
+}
